@@ -1,1 +1,1 @@
-node bin echo '${NODE_ENV} $(node -v)'
+ ./bin.js echo '${NODE_ENV} $(node -v)'

@@ -6,10 +6,10 @@ cross-platform command script as subset of bash
 npm install --save cross-script
 ```
 
-created so i can run the following to rebuild electron apps cross-platform (fixing [ssbc/patchwork#513](https://github.com/ssbc/patchwork/pull/513)):
+created so i can run the following to rebuild electron apps cross-platform:
 
 ```shell
-npm rebuild --runtime=electron --target=$(electron -v) --abi=$(electron --abi) --disturl=https://atom.io/download/atom-shell
+cross-script npm rebuild --runtime=electron --target=$(electron -v) --abi=$(electron --abi) --disturl=https://atom.io/download/atom-shell
 ```
 
 ## example

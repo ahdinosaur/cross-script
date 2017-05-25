@@ -18,7 +18,7 @@ cross-script npm rebuild --runtime=electron --target=$(electron -v) --abi=$(elec
 NODE_ENV=test # or the equivalent on Windows
 cross-script echo ${NODE_ENV} $(node -v)
 # on POSIX (Linux and macOS) this will be evaluated by `bash`
-# on Linux this will be evaluated by `cross-script`
+# on Windows this will be evaluated by `cross-script`
 test v6.2.1
 ```
 

@@ -1,0 +1,41 @@
+{
+  "name": "cross-script",
+  "version": "0.0.0",
+  "description": "cross-platform command script as subset of bash",
+  "main": "index.js",
+  "bin": "bin.js",
+  "scripts": {
+    "start": "NODE_ENV=test sh ./example.sh",
+    "test:deps": "dependency-check . && dependency-check . --extra --no-dev -i es2040",
+    "test:lint": "standard",
+    "test:node": "NODE_ENV=test run-default tape test/*.js --",
+    "test:coverage": "NODE_ENV=test nyc npm run test:node",
+    "test:coverage:report": "nyc report --reporter=lcov npm run test:node",
+    "test": "npm-run-all -s test:node test:lint test:deps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahdinosaur/cross-script.git"
+  },
+  "keywords": [],
+  "author": "Mikey <michael.williams@enspiral.com> (http://dinosaur.is)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ahdinosaur/cross-script/issues"
+  },
+  "homepage": "https://github.com/ahdinosaur/cross-script#readme",
+  "devDependencies": {
+    "dependency-check": "^2.7.0",
+    "npm-run-all": "^4.0.1",
+    "nyc": "^10.1.2",
+    "run-default": "^1.0.0",
+    "standard": "^8.6.0",
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "@f/zip-obj": "^1.1.1",
+    "cross-spawn": "^5.1.0",
+    "es6-template-regex": "^1.0.0",
+    "execall": "^1.0.0"
+  }
+}
